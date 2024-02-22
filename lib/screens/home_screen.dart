@@ -10,18 +10,29 @@ class HomeScreen extends StatelessWidget {
       children: [
         Column(
           children: [
-            Row(
-              children: [
-                const Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text("Good Morning"),
-                    Text("Book Ticket"),
-                  ],
-                ),
-                Image.asset("assets/images/logo.png")
-              ],
-            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Good Morning"),
+                      Text("Book Ticket"),
+                    ],
+                  ),
+                  // Image.asset("assets/images/logo.png").height(50).width(50)
+                  Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10)),
+                      width: 56,
+                      height: 56,
+                      child: Image.asset("assets/images/logo.png"))
+                ],
+              ),
+            )
           ],
         )
       ],

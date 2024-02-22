@@ -30,7 +30,7 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      // appBar: AppBar(),
       body: _widgetOptions[_currentScreenIndex],
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentScreenIndex,
