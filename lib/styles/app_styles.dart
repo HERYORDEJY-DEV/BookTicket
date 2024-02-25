@@ -5,7 +5,7 @@ class AppStyles {
   static Color primaryColor = Color(0xFF687daf);
   static Color textColor = Color(0xFF3b3b3b);
   static Color bgColor = Color(0xFFeeedf2);
-  static Color orangeColor = Color(0xFF526799);
+  static Color orangeColor = Color(0xFFF27B67);
   static Color inputBgColor = Color(0xFFf4f6fd);
 
 //   Text Styles
@@ -25,7 +25,13 @@ class AppStyles {
   static double smallSpacer = 8;
   static double mediumSpacer = 25;
   static double largeSpacer = 40;
+
+//   Padding
   static double screenHorzPadding = 20;
+  static double xsmallPadding = 5;
+  static double smallPadding = 10;
+  static double mediumPadding = 16;
+  static double largePadding = 20;
 
 //   Border Radius
   static double smallBorderRadius = 10;
