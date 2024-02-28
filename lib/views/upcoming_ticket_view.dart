@@ -13,7 +13,7 @@ class UpcomingTicketView extends StatelessWidget {
     final size = AppLayout.getSize(context);
 
     return SizedBox(
-      width: size.width,
+      width: size.width * 0.85,
       // height: 200,
       child: Container(
         clipBehavior: Clip.hardEdge,
@@ -26,7 +26,6 @@ class UpcomingTicketView extends StatelessWidget {
             /*
              The top part of the card
              */
-
             Container(
               decoration: BoxDecoration(
                 color: AppStyles.primaryColor,
@@ -75,7 +74,7 @@ class UpcomingTicketView extends StatelessWidget {
                           Center(
                             child: Transform.rotate(
                               angle: 1.5,
-                              child: Icon(
+                              child: const Icon(
                                 Icons.local_airport_rounded,
                                 color: Colors.white,
                               ),
@@ -112,7 +111,7 @@ class UpcomingTicketView extends StatelessWidget {
                               .copyWith(color: Colors.white),
                         ),
                         Expanded(child: Container()),
-                        SizedBox(
+                        const SizedBox(
                           width: 100,
                           child: Text(
                             "London",
@@ -130,7 +129,6 @@ class UpcomingTicketView extends StatelessWidget {
             /*
            The center part of the card
            */
-
             Container(
               child: Row(
                 children: [
