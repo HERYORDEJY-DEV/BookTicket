@@ -42,6 +42,8 @@ dependencies:
   http: ^0.13.5
   provider: ^6.0.5
   url_launcher: ^6.1.10
+  get:
+  pixel_perfect: any
 
 dev_dependencies:
   flutter_test:

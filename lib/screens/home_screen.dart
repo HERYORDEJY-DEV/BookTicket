@@ -1,71 +1,30 @@
 import 'package:bookticket/styles/app_styles.dart';
+import 'package:bookticket/utils/app_layout.dart';
 import 'package:bookticket/views/upcoming_ticket_view.dart';
+import 'package:bookticket/widgets/hotels_list_item.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../models/hotel_preview_model.dart';
-import '../widgets/hotels_list_item.dart';
-
-final List<HotelPreviewModel> hotelsDatas = [
-  HotelPreviewModel(
-      id: '1',
-      image:
-          "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      name: "Hilton",
-      location: "London",
-      price: 929),
-  HotelPreviewModel(
-      id: '2',
-      image:
-          "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      name: "Marble",
-      location: "New York",
-      price: 737),
-  HotelPreviewModel(
-      id: '3',
-      image:
-          "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      name: "Traffors",
-      location: "Manchester",
-      price: 363),
-  HotelPreviewModel(
-      id: '4',
-      image:
-          "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      name: "Kyoto",
-      location: "Tokyo",
-      price: 300)
-].toList();
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final moviesTitles = ['Inception', 'Heat', 'Spider Man'];
-    final List<Map<String, dynamic>> hotelsData = List.generate(
-        5,
-        (i) => {
-              "id": 1,
-              "image":
-                  "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              "title": "Hilton",
-              "location": "London",
-              "price": 200
-            });
-
     return Scaffold(
         backgroundColor: AppStyles.bgColor,
         body: ListView(children: [
-          Gap(AppStyles.largeSpacer),
+          Gap(AppLayout.getResponsiveHeight(AppStyles.largeSpacer)),
 
           // Welcome greeting
           Column(
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: AppStyles.screenHorzPadding),
+                    horizontal: AppLayout.getResponsiveWidth(
+                        AppStyles.screenHorzPadding)),
                 child: Row(
                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -83,13 +42,13 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Container(
                       width: 50,
                       height: 50,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
+                          image: const DecorationImage(
                               image: AssetImage('assets/images/logo.png'))),
                     )
                   ],
@@ -97,7 +56,7 @@ class HomeScreen extends StatelessWidget {
               )
             ],
           ),
-          Gap(AppStyles.mediumSpacer),
+          Gap(AppLayout.getResponsiveWidth(AppStyles.mediumSpacer)),
 
           // Search bar
           Padding(
@@ -115,7 +74,7 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Icon(FluentSystemIcons.ic_fluent_search_regular),
-                  Gap(AppStyles.smallSpacer),
+                  Gap(AppLayout.getResponsiveWidth(10)),
                   Text(
                     "Search here...",
                     style: AppStyles.headlineText4,
@@ -124,7 +83,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          Gap(AppStyles.mediumSpacer),
+          Gap(AppLayout.getResponsiveHeight(AppStyles.mediumSpacer)),
 
           //   Upcoming Flights
           // Upcoming Flights - header
@@ -149,23 +108,23 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          Gap(AppStyles.mediumSpacer - 15),
+          Gap(AppLayout.getResponsiveHeight(AppStyles.mediumSpacer - 15)),
 
           // Upcoming Flights - tickets
           SingleChildScrollView(
-            padding: EdgeInsets.only(right: 20),
+            padding: EdgeInsets.only(right: AppLayout.getResponsiveWidth(20)),
             scrollDirection: Axis.horizontal,
             child: Row(
               children: List.generate(
                 5,
                 (index) => Flex(direction: Axis.horizontal, children: [
-                  Container(width: 20),
+                  Container(width: AppLayout.getResponsiveWidth(20)),
                   UpcomingTicketView(),
                 ]),
               ),
             ),
           ),
-          Gap(AppStyles.mediumSpacer),
+          Gap(AppLayout.getResponsiveHeight(50)),
 
           //   Hotels
           Padding(
@@ -189,22 +148,19 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          Gap(AppStyles.mediumSpacer - 20),
+          Gap(AppLayout.getResponsiveHeight(AppStyles.mediumSpacer)),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Padding(
-              padding: const EdgeInsets.only(right: 20),
+              padding: EdgeInsets.only(right: AppStyles.screenHorzPadding),
               child: Row(
-                children: [
-                  for (var hotel in hotelsDatas)
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20),
-                      child: HotelsListItem(
-                        item: hotel,
-                      ),
-                    ),
-                ],
-              ),
+                  children: hotelsDatas
+                      .map((hotel) => Padding(
+                            padding: EdgeInsets.only(
+                                left: AppStyles.screenHorzPadding),
+                            child: HotelsListItem(hotel: hotel),
+                          ))
+                      .toList()),
             ),
           ),
 

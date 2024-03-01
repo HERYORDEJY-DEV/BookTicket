@@ -6,9 +6,9 @@ import 'package:gap/gap.dart';
 import '../styles/app_styles.dart';
 
 class HotelsListItem extends StatelessWidget {
-  const HotelsListItem({super.key, required this.item});
+  const HotelsListItem({super.key, required this.hotel});
 
-  final HotelPreviewModel item;
+  final HotelPreviewModel hotel;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,14 @@ class HotelsListItem extends StatelessWidget {
           clipBehavior: Clip.hardEdge,
           decoration: BoxDecoration(
               color: AppStyles.primaryColor,
-              borderRadius: BorderRadius.circular(16)),
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.grey.shade200,
+                    spreadRadius: 5,
+                    blurRadius: 20),
+              ]),
+          padding: EdgeInsets.all(AppStyles.mediumPadding),
           width: size.width * 0.6,
           // height: 350,
           child: Column(
@@ -29,6 +36,10 @@ class HotelsListItem extends StatelessWidget {
               Container(
                   height: 150,
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(AppStyles.mediumPadding - 10),
+                        topRight:
+                            Radius.circular(AppStyles.mediumPadding - 10)),
                     color: AppStyles.primaryColor,
                     image: const DecorationImage(
                         fit: BoxFit.cover,
@@ -37,26 +48,24 @@ class HotelsListItem extends StatelessWidget {
                   )),
               Container(
                 padding: EdgeInsets.only(
-                  left: AppStyles.mediumPadding,
-                  right: AppStyles.mediumPadding,
-                  bottom: AppStyles.mediumPadding,
                   top: AppStyles.smallPadding,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      item.name,
+                      hotel.name,
                       style:
                           AppStyles.headlineText1.copyWith(color: Colors.white),
                     ),
                     Text(
-                      item.location,
-                      style: AppStyles.headlineText3,
+                      hotel.location,
+                      style: AppStyles.headlineText3
+                          .copyWith(color: AppStyles.kakiColor),
                     ),
                     Gap(AppStyles.smallPadding),
                     Text(
-                      "\$${item.price}",
+                      "\$${hotel.price}/night",
                       style:
                           AppStyles.headlineText2.copyWith(color: Colors.white),
                     )

@@ -7,6 +7,7 @@ class AppStyles {
   static Color bgColor = Color(0xFFeeedf2);
   static Color orangeColor = Color(0xFFF27B67);
   static Color inputBgColor = Color(0xFFf4f6fd);
+  static Color kakiColor = Color(0xFFd2bdb6);
 
 //   Text Styles
   static TextStyle primaryTextStyle =
@@ -23,18 +24,22 @@ class AppStyles {
 
 //   Spacer
   static double smallSpacer = 8;
-  static double mediumSpacer = 25;
-  static double largeSpacer = 40;
+  static double mediumSpacer = 16;
+  static double largeSpacer = 26;
+  static double xlargeSpacer = 32;
 
 //   Padding
   static double screenHorzPadding = 20;
-  static double xsmallPadding = 5;
-  static double smallPadding = 10;
+  static double screenVertPadding = 24;
+  static double xsmallPadding = 4;
+  static double smallPadding = 8;
   static double mediumPadding = 16;
-  static double largePadding = 20;
+  static double largePadding = 26;
 
 //   Border Radius
-  static double smallBorderRadius = 10;
-  static double mediumBorderRadius = 20;
-  static double largeBorderRadius = 40;
+  static double smallBorderRadius = 4;
+  static double mediumBorderRadius = 8;
+  static double largeBorderRadius = 16;
+  static double xlargeBorderRadius = 24;
+  static double xxlargeBorderRadius = 32;
 }

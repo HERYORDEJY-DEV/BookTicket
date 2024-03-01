@@ -18,7 +18,8 @@ class UpcomingTicketView extends StatelessWidget {
       child: Container(
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppStyles.mediumBorderRadius),
+          borderRadius: BorderRadius.circular(
+              AppLayout.getResponsiveWidth(AppStyles.mediumBorderRadius)),
           color: AppStyles.orangeColor,
         ),
         child: Column(
@@ -30,7 +31,11 @@ class UpcomingTicketView extends StatelessWidget {
               decoration: BoxDecoration(
                 color: AppStyles.primaryColor,
               ),
-              padding: EdgeInsets.all(16),
+              padding: EdgeInsets.symmetric(
+                  horizontal:
+                      AppLayout.getResponsiveWidth(AppStyles.mediumPadding),
+                  vertical:
+                      AppLayout.getResponsiveWidth(AppStyles.mediumPadding)),
               child: Column(
                 children: [
                   Row(
@@ -50,7 +55,6 @@ class UpcomingTicketView extends StatelessWidget {
                                 BoxConstraints constraints) {
                               dynamic ll =
                                   (constraints.constrainWidth() / 6).floor();
-                              print("ll >> $ll");
                               return Flex(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
