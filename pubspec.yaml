@@ -44,6 +44,7 @@ dependencies:
   url_launcher: ^6.1.10
   get:
   pixel_perfect: any
+  flutter_screenutil: ^5.9.0
 
 dev_dependencies:
   flutter_test:
