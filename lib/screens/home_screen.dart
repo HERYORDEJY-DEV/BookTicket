@@ -1,9 +1,9 @@
 import 'package:bookticket/styles/app_styles.dart';
-import 'package:bookticket/utils/app_layout.dart';
 import 'package:bookticket/views/upcoming_ticket_view.dart';
 import 'package:bookticket/widgets/hotels_list_item.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 import '../models/hotel_preview_model.dart';
@@ -16,15 +16,15 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: AppStyles.bgColor,
         body: ListView(children: [
-          Gap(AppLayout.getResponsiveHeight(AppStyles.largeSpacer)),
+          Gap(AppStyles.largeSpacer.h),
 
           // Welcome greeting
           Column(
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: AppLayout.getResponsiveWidth(
-                        AppStyles.screenHorzPadding)),
+                        horizontal: AppStyles.screenHorzPadding)
+                    .w,
                 child: Row(
                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -44,10 +44,10 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const Spacer(),
                     Container(
-                      width: 50,
-                      height: 50,
+                      width: 50.w,
+                      height: 50.w,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(10.r),
                           image: const DecorationImage(
                               image: AssetImage('assets/images/logo.png'))),
                     )
@@ -56,25 +56,25 @@ class HomeScreen extends StatelessWidget {
               )
             ],
           ),
-          Gap(AppLayout.getResponsiveWidth(AppStyles.mediumSpacer)),
+          Gap(AppStyles.mediumSpacer.h),
 
           // Search bar
           Padding(
             padding:
-                EdgeInsets.symmetric(horizontal: AppStyles.screenHorzPadding),
+                EdgeInsets.symmetric(horizontal: AppStyles.screenHorzPadding).w,
             child: Container(
-              height: 56,
-              padding: const EdgeInsets.symmetric(horizontal: 12),
+              height: 50.h,
+              padding: const EdgeInsets.symmetric(horizontal: 12).w,
               decoration: BoxDecoration(
                 color: AppStyles.inputBgColor,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(10.r),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Icon(FluentSystemIcons.ic_fluent_search_regular),
-                  Gap(AppLayout.getResponsiveWidth(10)),
+                  Gap(10.w),
                   Text(
                     "Search here...",
                     style: AppStyles.headlineText4,
@@ -83,13 +83,13 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          Gap(AppLayout.getResponsiveHeight(AppStyles.mediumSpacer)),
+          Gap(AppStyles.largeSpacer.h),
 
           //   Upcoming Flights
           // Upcoming Flights - header
           Padding(
             padding:
-                EdgeInsets.symmetric(horizontal: AppStyles.screenHorzPadding),
+                EdgeInsets.symmetric(horizontal: AppStyles.screenHorzPadding).w,
             child: Row(
               children: [
                 Text(
@@ -108,35 +108,35 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          Gap(AppLayout.getResponsiveHeight(AppStyles.mediumSpacer - 15)),
+          Gap(AppStyles.mediumSpacer.h),
 
           // Upcoming Flights - tickets
           SingleChildScrollView(
-            padding: EdgeInsets.only(right: AppLayout.getResponsiveWidth(20)),
+            padding: EdgeInsets.only(right: AppStyles.screenHorzPadding.w),
             scrollDirection: Axis.horizontal,
             child: Row(
               children: List.generate(
                 5,
                 (index) => Flex(direction: Axis.horizontal, children: [
-                  Container(width: AppLayout.getResponsiveWidth(20)),
+                  Container(width: 20.w),
                   UpcomingTicketView(),
                 ]),
               ),
             ),
           ),
-          Gap(AppLayout.getResponsiveHeight(50)),
+          Gap(AppStyles.largeSpacer.h),
 
           //   Hotels
           Padding(
             padding:
                 EdgeInsets.symmetric(horizontal: AppStyles.screenHorzPadding),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   "Hotels",
                   style: AppStyles.headlineText2,
                 ),
-                Spacer(),
                 InkWell(
                   onTap: () => {print("View allUpcoming Flights")},
                   child: Text(
@@ -148,16 +148,17 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          Gap(AppLayout.getResponsiveHeight(AppStyles.mediumSpacer)),
+          Gap(AppStyles.mediumSpacer.h),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Padding(
-              padding: EdgeInsets.only(right: AppStyles.screenHorzPadding),
+              padding: EdgeInsets.only(right: AppStyles.screenHorzPadding).w,
               child: Row(
                   children: hotelsDatas
                       .map((hotel) => Padding(
                             padding: EdgeInsets.only(
-                                left: AppStyles.screenHorzPadding),
+                                    left: AppStyles.screenHorzPadding)
+                                .w,
                             child: HotelsListItem(hotel: hotel),
                           ))
                       .toList()),

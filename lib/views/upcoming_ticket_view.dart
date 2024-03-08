@@ -1,6 +1,7 @@
 import 'package:bookticket/styles/app_styles.dart';
 import 'package:bookticket/utils/app_layout.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 import '../widgets/OutlinedContainer.dart';
@@ -13,13 +14,12 @@ class UpcomingTicketView extends StatelessWidget {
     final size = AppLayout.getSize(context);
 
     return SizedBox(
-      width: size.width * 0.85,
+      width: 0.85.sw,
       // height: 200,
       child: Container(
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(
-              AppLayout.getResponsiveWidth(AppStyles.mediumBorderRadius)),
+          borderRadius: BorderRadius.circular(AppStyles.mediumBorderRadius.r),
           color: AppStyles.orangeColor,
         ),
         child: Column(
@@ -32,10 +32,8 @@ class UpcomingTicketView extends StatelessWidget {
                 color: AppStyles.primaryColor,
               ),
               padding: EdgeInsets.symmetric(
-                  horizontal:
-                      AppLayout.getResponsiveWidth(AppStyles.mediumPadding),
-                  vertical:
-                      AppLayout.getResponsiveWidth(AppStyles.mediumPadding)),
+                  horizontal: AppStyles.mediumPadding.w,
+                  vertical: AppStyles.mediumPadding.h),
               child: Column(
                 children: [
                   Row(
@@ -48,9 +46,9 @@ class UpcomingTicketView extends StatelessWidget {
                       Expanded(child: Container()),
                       OutlinedContainer(),
                       Expanded(
-                        child: Stack(children: [
+                        child: Stack(alignment: Alignment.center, children: [
                           SizedBox(
-                            height: 24,
+                            height: 24.h,
                             child: LayoutBuilder(builder: (BuildContext context,
                                 BoxConstraints constraints) {
                               dynamic ll =
@@ -95,13 +93,13 @@ class UpcomingTicketView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Gap(3),
+                  Gap(3.h),
                   Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SizedBox(
-                          width: 100,
+                          width: 100.w,
                           child: const Text(
                             "New -York",
                             style: TextStyle(color: Colors.white),
@@ -115,9 +113,9 @@ class UpcomingTicketView extends StatelessWidget {
                               .copyWith(color: Colors.white),
                         ),
                         Expanded(child: Container()),
-                        const SizedBox(
-                          width: 100,
-                          child: Text(
+                        SizedBox(
+                          width: 100.w,
+                          child: const Text(
                             "London",
                             style: TextStyle(
                               color: Colors.white,
@@ -136,21 +134,21 @@ class UpcomingTicketView extends StatelessWidget {
             Container(
               child: Row(
                 children: [
-                  const SizedBox(
-                    width: 10,
-                    height: 20,
+                  SizedBox(
+                    width: 10.w,
+                    height: 20.h,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(10),
-                            bottomRight: Radius.circular(10),
+                            topRight: Radius.circular(10).r,
+                            bottomRight: Radius.circular(10).r,
                           )),
                     ),
                   ),
                   Expanded(
                     child: SizedBox(
-                      height: 20,
+                      height: 20.h,
                       child: LayoutBuilder(builder:
                           (BuildContext context, BoxConstraints constraints) {
                         return Flex(
@@ -159,8 +157,8 @@ class UpcomingTicketView extends StatelessWidget {
                           children: List.generate(
                               (constraints.constrainWidth() / 10).floor(),
                               (index) => SizedBox(
-                                  width: 5,
-                                  height: 1,
+                                  width: 5.w,
+                                  height: 1.h,
                                   child: DecoratedBox(
                                       decoration: BoxDecoration(
                                     color: Colors.white,
@@ -169,15 +167,15 @@ class UpcomingTicketView extends StatelessWidget {
                       }),
                     ),
                   ),
-                  const SizedBox(
-                    width: 10,
-                    height: 20,
+                  SizedBox(
+                    width: 10.w,
+                    height: 20.h,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            bottomLeft: Radius.circular(10),
+                            topLeft: Radius.circular(10).r,
+                            bottomLeft: Radius.circular(10).r,
                           )),
                     ),
                   )
@@ -189,8 +187,8 @@ class UpcomingTicketView extends StatelessWidget {
              The bottom part of the card
              */
             Container(
-              padding:
-                  EdgeInsets.only(left: 16, top: 10, bottom: 16, right: 16),
+              padding: EdgeInsets.only(
+                  left: 16.w, top: 10.h, bottom: 16.h, right: 16.w),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,

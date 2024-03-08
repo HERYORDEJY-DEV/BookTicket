@@ -45,6 +45,7 @@ dependencies:
   get:
   pixel_perfect: any
   flutter_screenutil: ^5.9.0
+  collection: ^1.18.0
 
 dev_dependencies:
   flutter_test:

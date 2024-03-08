@@ -1,6 +1,6 @@
 import 'package:bookticket/models/hotel_preview_model.dart';
-import 'package:bookticket/utils/app_layout.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 import '../styles/app_styles.dart';
@@ -12,34 +12,35 @@ class HotelsListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = AppLayout.getSize(context);
-
     return SizedBox(
-      width: size.width * 0.6,
+      width: 0.6.sw,
       child: Container(
           clipBehavior: Clip.hardEdge,
           decoration: BoxDecoration(
               color: AppStyles.primaryColor,
-              borderRadius: BorderRadius.circular(16),
+              borderRadius:
+                  BorderRadius.circular(AppStyles.mediumBorderRadius.r),
               boxShadow: [
                 BoxShadow(
                     color: Colors.grey.shade200,
                     spreadRadius: 5,
                     blurRadius: 20),
               ]),
-          padding: EdgeInsets.all(AppStyles.mediumPadding),
-          width: size.width * 0.6,
+          padding: EdgeInsets.symmetric(
+              horizontal: AppStyles.mediumPadding.w,
+              vertical: AppStyles.mediumPadding.h),
+          // width: size.width * 0.6,
           // height: 350,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                  height: 150,
+                  height: 120.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(AppStyles.mediumPadding - 10),
+                        topLeft: Radius.circular(AppStyles.smallBorderRadius.r),
                         topRight:
-                            Radius.circular(AppStyles.mediumPadding - 10)),
+                            Radius.circular(AppStyles.smallBorderRadius.r)),
                     color: AppStyles.primaryColor,
                     image: const DecorationImage(
                         fit: BoxFit.cover,
@@ -49,7 +50,7 @@ class HotelsListItem extends StatelessWidget {
               Container(
                 padding: EdgeInsets.only(
                   top: AppStyles.smallPadding,
-                ),
+                ).h,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -63,7 +64,7 @@ class HotelsListItem extends StatelessWidget {
                       style: AppStyles.headlineText3
                           .copyWith(color: AppStyles.kakiColor),
                     ),
-                    Gap(AppStyles.smallPadding),
+                    Gap(AppStyles.mediumPadding.h),
                     Text(
                       "\$${hotel.price}/night",
                       style:

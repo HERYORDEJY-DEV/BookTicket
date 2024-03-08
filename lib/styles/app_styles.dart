@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppStyles {
   // Colors
@@ -11,16 +12,20 @@ class AppStyles {
 
 //   Text Styles
   static TextStyle primaryTextStyle =
-      TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: textColor);
+      TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500, color: textColor);
   static TextStyle headlineText1 =
-      TextStyle(fontSize: 26, fontWeight: FontWeight.w700, color: textColor);
+      TextStyle(fontSize: 26.sp, fontWeight: FontWeight.w700, color: textColor);
   static TextStyle headlineText2 =
-      TextStyle(fontSize: 21, fontWeight: FontWeight.w700, color: textColor);
+      TextStyle(fontSize: 21.sp, fontWeight: FontWeight.w700, color: textColor);
   static TextStyle headlineText3 = TextStyle(
-      fontSize: 17, fontWeight: FontWeight.w700, color: Colors.grey.shade500);
+      fontSize: 17.sp,
+      fontWeight: FontWeight.w700,
+      color: Colors.grey.shade500);
 
   static TextStyle headlineText4 = TextStyle(
-      fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey.shade500);
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w500,
+      color: Colors.grey.shade500);
 
 //   Spacer
   static double smallSpacer = 8;
@@ -29,8 +34,8 @@ class AppStyles {
   static double xlargeSpacer = 32;
 
 //   Padding
-  static double screenHorzPadding = 20;
-  static double screenVertPadding = 24;
+  static double screenHorzPadding = 16;
+  static double screenVertPadding = 32;
   static double xsmallPadding = 4;
   static double smallPadding = 8;
   static double mediumPadding = 16;
