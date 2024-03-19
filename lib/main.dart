@@ -1,6 +1,7 @@
 import 'package:bookticket/screens/bottom_bar.dart';
 import 'package:bookticket/styles/app_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /*
@@ -58,7 +59,17 @@ class BookTicket extends StatelessWidget {
 }
 */
 
-void main() => runApp(const BookTicket());
+void main() {
+  // Use SystemChrome
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent, statusBarBrightness: Brightness.dark,
+      //color set to transperent or set your own color
+    ),
+  );
+
+  runApp(const BookTicket());
+}
 
 class BookTicket extends StatelessWidget {
   const BookTicket({Key? key}) : super(key: key);
