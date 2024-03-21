@@ -119,7 +119,7 @@ class HomeScreen extends StatelessWidget {
                 5,
                 (index) => Flex(direction: Axis.horizontal, children: [
                   Container(width: 20.w),
-                  UpcomingTicketView(),
+                  const UpcomingTicketView(),
                 ]),
               ),
             ),

@@ -51,8 +51,6 @@ class UpcomingTicketView extends StatelessWidget {
                             height: 24.h,
                             child: LayoutBuilder(builder: (BuildContext context,
                                 BoxConstraints constraints) {
-                              dynamic ll =
-                                  (constraints.constrainWidth() / 6).floor();
                               return Flex(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
