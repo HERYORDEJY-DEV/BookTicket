@@ -1,9 +1,7 @@
 import 'package:bookticket/styles/app_styles.dart';
-import 'package:bookticket/utils/app_layout.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gap/gap.dart';
 
 import '../models/custom_tab_view_model.dart';
 
@@ -70,20 +68,18 @@ class _CustomTabViewState extends State<CustomTabView> {
           ),
         ),
 
-        Gap(AppStyles.mediumSpacer.h),
+        // Gap(AppStyles.smallSpacer.h),
 
-        //   Body
-        Flex(
-          direction: Axis.vertical,
-          children: widget.views.mapIndexed((index, element) {
-            Widget childView = element.view;
-            bool isActive = index == currentTabIndex;
-            return isActive
-                ? SizedBox(
-                    width: AppLayout.getSize(context).width, child: childView)
-                : SizedBox();
-          }).toList(),
-        )
+        // ...widget.views.mapIndexed((index, element) {
+        //   Widget childView = element.view;
+        //   bool isActive = index == currentTabIndex;
+        //   return isActive
+        //       ? SizedBox(
+        //           width: AppLayout.getSize(context).width, child: childView)
+        //       : SizedBox();
+        // }).toList(),
+
+        widget.views[currentTabIndex].view
       ],
     );
   }
