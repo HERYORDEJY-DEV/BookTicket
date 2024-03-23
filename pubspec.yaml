@@ -47,6 +47,10 @@ dependencies:
   flutter_screenutil: ^5.9.0
   collection: ^1.18.0
   barcode_widget: ^2.0.4
+  round_icon:
+    git:
+      url: https://github.com/teixeirazeus/round_icon
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:

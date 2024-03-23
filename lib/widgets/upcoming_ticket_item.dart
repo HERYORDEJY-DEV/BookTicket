@@ -45,7 +45,9 @@ class UpcomingTicketItem extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(AppStyles.largeBorderRadius.r)),
+            borderRadius:
+                BorderRadius.all(Radius.circular(AppStyles.largeBorderRadius))),
+        // BorderRadius.all(Radius.circular(AppStyles.largeBorderRadius))),
         child: Padding(
           padding: EdgeInsets.symmetric(
               horizontal: AppStyles.screenHorzPadding.r,

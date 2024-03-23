@@ -76,10 +76,9 @@ class _SearchScreenState extends State<SearchScreen> {
                               right: isAirlineTickets
                                   ? Radius.zero
                                   : Radius.circular(
-                                      AppStyles.largeBorderRadius.r),
+                                      AppStyles.largeBorderRadius),
                               left: isAirlineTickets
-                                  ? Radius.circular(
-                                      AppStyles.largeBorderRadius.r)
+                                  ? Radius.circular(AppStyles.largeBorderRadius)
                                   : Radius.zero,
                             ),
                           ),
@@ -106,7 +105,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 backgroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(
-                        Radius.circular(AppStyles.smallBorderRadius.r)))),
+                        Radius.circular(AppStyles.smallBorderRadius)))),
             child: Row(
               children: [
                 Icon(
@@ -136,7 +135,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 backgroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(
-                        Radius.circular(AppStyles.smallBorderRadius.r)))),
+                        Radius.circular(AppStyles.smallBorderRadius)))),
             child: Row(
               children: [
                 Icon(
@@ -175,8 +174,8 @@ class _SearchScreenState extends State<SearchScreen> {
                   child: DecoratedBox(
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius:
-                          BorderRadius.circular(AppStyles.mediumBorderRadius.r),
+                      borderRadius: BorderRadius.all(
+                          Radius.circular(AppStyles.mediumBorderRadius)),
                     ),
                     child: Padding(
                       padding: EdgeInsets.all(AppStyles.mediumPadding.r),
@@ -187,8 +186,8 @@ class _SearchScreenState extends State<SearchScreen> {
                           Container(
                             height: 150.h,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                AppStyles.mediumBorderRadius.r,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(AppStyles.mediumBorderRadius),
                               ),
                               image: const DecorationImage(
                                 image: NetworkImage(
@@ -219,8 +218,8 @@ class _SearchScreenState extends State<SearchScreen> {
                       DecoratedBox(
                         decoration: BoxDecoration(
                           color: Colors.teal,
-                          borderRadius: BorderRadius.circular(
-                              AppStyles.mediumBorderRadius.r),
+                          borderRadius: BorderRadius.all(
+                              Radius.circular(AppStyles.mediumBorderRadius)),
                         ),
                         child: Stack(
                           children: [
@@ -268,8 +267,8 @@ class _SearchScreenState extends State<SearchScreen> {
                         child: DecoratedBox(
                           decoration: BoxDecoration(
                             color: Colors.pinkAccent,
-                            borderRadius: BorderRadius.circular(
-                                AppStyles.mediumBorderRadius.r),
+                            borderRadius: BorderRadius.all(
+                                Radius.circular(AppStyles.mediumBorderRadius)),
                           ),
                           child: Padding(
                             padding: EdgeInsets.symmetric(

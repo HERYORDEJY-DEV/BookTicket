@@ -19,7 +19,8 @@ class UpcomingTicketView extends StatelessWidget {
       child: Container(
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppStyles.mediumBorderRadius.r),
+          borderRadius:
+              BorderRadius.all(Radius.circular(AppStyles.mediumBorderRadius)),
           color: AppStyles.orangeColor,
         ),
         child: Column(

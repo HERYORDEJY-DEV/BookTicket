@@ -1,7 +1,6 @@
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:bookticket/styles/app_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomBarcodeGenerator extends StatelessWidget {
   const CustomBarcodeGenerator({super.key});
@@ -13,7 +12,7 @@ class CustomBarcodeGenerator extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.transparent,
           borderRadius:
-              BorderRadius.all(Radius.circular(AppStyles.largeBorderRadius.r))),
+              BorderRadius.all(Radius.circular(AppStyles.largeBorderRadius))),
       child: BarcodeWidget(
         barcode: Barcode.code128(),
         // Barcode type and settings

@@ -18,8 +18,8 @@ class HotelsListItem extends StatelessWidget {
           clipBehavior: Clip.hardEdge,
           decoration: BoxDecoration(
               color: AppStyles.primaryColor,
-              borderRadius:
-                  BorderRadius.circular(AppStyles.mediumBorderRadius.r),
+              borderRadius: BorderRadius.all(
+                  Radius.circular(AppStyles.mediumBorderRadius)),
               boxShadow: [
                 BoxShadow(
                     color: Colors.grey.shade200,
@@ -38,9 +38,8 @@ class HotelsListItem extends StatelessWidget {
                   height: 120.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(AppStyles.smallBorderRadius.r),
-                        topRight:
-                            Radius.circular(AppStyles.smallBorderRadius.r)),
+                        topLeft: Radius.circular(AppStyles.smallBorderRadius),
+                        topRight: Radius.circular(AppStyles.smallBorderRadius)),
                     color: AppStyles.primaryColor,
                     image: const DecorationImage(
                         fit: BoxFit.cover,

@@ -42,9 +42,9 @@ class AppStyles {
   static double largePadding = 26;
 
 //   Border Radius
-  static double smallBorderRadius = 4;
-  static double mediumBorderRadius = 8;
-  static double largeBorderRadius = 16;
-  static double xlargeBorderRadius = 24;
-  static double xxlargeBorderRadius = 32;
+  static double smallBorderRadius = 4.r;
+  static double mediumBorderRadius = 8.r;
+  static double largeBorderRadius = 16.r;
+  static double xlargeBorderRadius = 24.r;
+  static double xxlargeBorderRadius = 32.r;
 }

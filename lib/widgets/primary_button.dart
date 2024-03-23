@@ -28,8 +28,8 @@ class PrimaryButton extends StatelessWidget {
             backgroundColor: AppStyles.primaryColor,
             foregroundColor: Colors.white,
             shape: RoundedRectangleBorder(
-              borderRadius:
-                  BorderRadius.circular(AppStyles.mediumBorderRadius.r),
+              borderRadius: BorderRadius.all(
+                  Radius.circular(AppStyles.mediumBorderRadius)),
             )),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
